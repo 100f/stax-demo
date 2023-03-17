@@ -1,7 +1,5 @@
 package dev.caio.study.stax.demo;
 
-import dev.caio.study.stax.demo.domain.StaxXMLReader;
-import dev.caio.study.stax.demo.domain.XMLReader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
