@@ -5,13 +5,11 @@ import dev.caio.study.stax.demo.domain.XMLReader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Collections;
-
 @SpringBootApplication
 public class StAxReaderDemoApplication {
 
 	public static void main(String[] args) {
-		XMLReader reader = new StaxXMLReader(Collections.emptyList());
+		SpringApplication.run(StAxReaderDemoApplication.class, args);
 	}
 
 }
