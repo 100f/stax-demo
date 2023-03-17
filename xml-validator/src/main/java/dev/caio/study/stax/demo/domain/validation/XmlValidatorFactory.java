@@ -1,8 +1,8 @@
 package dev.caio.study.stax.demo.domain.validation;
 
-public class XMLValidatorFactory implements ValidatorFactory {
+public class XmlValidatorFactory implements ValidatorFactory {
     @Override
     public AbstractValidator build() {
-        return new XMLValidator(null);
+        return new XmlValidator(null);
     }
 }
