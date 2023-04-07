@@ -15,8 +15,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class StaxXMLReader extends XMLReader {
-    public StaxXMLReader(List<XMLReaderListener> readerListeners) {
-        super(readerListeners);
+    public StaxXMLReader(XMLReaderListener readerListener) {
+        super(readerListener);
     }
 
     @Override
@@ -29,22 +29,22 @@ public class StaxXMLReader extends XMLReader {
                 XMLEvent nextEvent = reader.nextEvent();
 
                 if (nextEvent.isStartDocument()) {
-                    readerListeners.forEach(XMLReaderListener::onReadStart);
+                    readerListener.onReadStart();
                 }
                 if (nextEvent.isEndDocument()) {
-                    readerListeners.forEach(XMLReaderListener::onReadFinish);
+                    readerListener.onReadFinish();
                 }
                 if (nextEvent.isStartElement()) {
                     StartElement startElement = nextEvent.asStartElement();
-                    readerListeners.forEach(readerListener -> readerListener.onXmlElementReadStart(startElement.getName().toString()));
+                    readerListener.onXmlElementReadStart(startElement.getName().getLocalPart());
                 }
                 if (nextEvent.isEndElement()) {
                     EndElement endElement = nextEvent.asEndElement();
-                    readerListeners.forEach(readerListener -> readerListener.onXmlElementReadFinish(endElement.getName().toString()));
+                    readerListener.onXmlElementReadFinish(endElement.getName().toString());
                 }
                 if (nextEvent.isCharacters()) {
                     Characters characters = nextEvent.asCharacters();
-                    readerListeners.forEach(readerListener -> readerListener.characters(characters.getData()));
+                    readerListener.characters(characters.getData());
                 }
             }
         } catch (XMLStreamException e) {

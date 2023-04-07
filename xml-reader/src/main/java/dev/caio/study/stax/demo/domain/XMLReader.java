@@ -3,10 +3,10 @@ package dev.caio.study.stax.demo.domain;
 import java.util.List;
 
 public abstract class XMLReader implements FileReader {
-    protected final List<XMLReaderListener> readerListeners;
+    protected final XMLReaderListener readerListener;
 
-    public XMLReader(List<XMLReaderListener> readerListeners) {
-        this.readerListeners = readerListeners;
+    public XMLReader(XMLReaderListener readerListener) {
+        this.readerListener = readerListener;
     }
 
 }

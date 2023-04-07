@@ -19,7 +19,7 @@ class StAxFileReaderDemoApplicationTests {
 	@Test
 	void logToConsoleXmlReaderTest() throws IOException {
 		XMLReaderListener printListener = new PrintingXMLReaderListener();
-		StaxXMLReader reader = new StaxXMLReader(Collections.singletonList(printListener));
+		StaxXMLReader reader = new StaxXMLReader(printListener);
 		reader.read(xmlFile.getURI().getPath());
 	}
 
