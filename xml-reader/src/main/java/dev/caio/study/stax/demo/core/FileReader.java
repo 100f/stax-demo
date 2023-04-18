@@ -1,4 +1,4 @@
-package dev.caio.study.stax.demo.domain;
+package dev.caio.study.stax.demo.core;
 
 import java.io.IOException;
 

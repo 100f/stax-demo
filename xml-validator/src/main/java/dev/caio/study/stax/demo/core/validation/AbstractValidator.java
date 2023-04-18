@@ -1,4 +1,4 @@
-package dev.caio.study.stax.demo.domain.validation;
+package dev.caio.study.stax.demo.core.validation;
 
 public abstract class AbstractValidator implements Validator {
     protected ValidatorErrorListener errorListener;

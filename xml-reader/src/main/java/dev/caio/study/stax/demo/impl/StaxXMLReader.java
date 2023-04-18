@@ -1,7 +1,7 @@
 package dev.caio.study.stax.demo.impl;
 
-import dev.caio.study.stax.demo.domain.XMLReader;
-import dev.caio.study.stax.demo.domain.XMLReaderListener;
+import dev.caio.study.stax.demo.core.XMLReader;
+import dev.caio.study.stax.demo.core.XMLReaderListener;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -12,7 +12,6 @@ import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
 
 public class StaxXMLReader extends XMLReader {
     public StaxXMLReader(XMLReaderListener readerListener) {

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.caio.study</groupId>
-	<artifactId>stax.demo</artifactId>
+	<artifactId>xml.schema</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>XML Schema Demo</name>
 	<description>Módulo para representar as entidades de schema a serem produtos da operação de unmarshalling</description>

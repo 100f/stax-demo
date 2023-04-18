@@ -1,6 +1,6 @@
-package dev.caio.study.stax.demo.domain.validation;
+package dev.caio.study.stax.demo.core.validation;
 
-import dev.caio.study.stax.demo.domain.exception.UnmarshallingException;
+import dev.caio.study.stax.demo.core.exception.UnmarshallingException;
 
 import java.io.File;
 

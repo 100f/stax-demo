@@ -1,6 +1,6 @@
 package dev.caio.study.stax.demo.impl;
 
-import dev.caio.study.stax.demo.domain.XMLReaderListener;
+import dev.caio.study.stax.demo.core.XMLReaderListener;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

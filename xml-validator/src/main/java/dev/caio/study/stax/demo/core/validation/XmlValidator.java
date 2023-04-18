@@ -1,4 +1,4 @@
-package dev.caio.study.stax.demo.domain.validation;
+package dev.caio.study.stax.demo.core.validation;
 
 import java.io.File;
 import java.io.IOException;

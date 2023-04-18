@@ -1,4 +1,4 @@
-package dev.caio.study.stax.demo.domain.exception;
+package dev.caio.study.stax.demo.core.exception;
 
 public class UnmarshallingException extends RuntimeException {
     public UnmarshallingException(String message) {

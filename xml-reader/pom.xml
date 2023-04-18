@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.caio.study</groupId>
-	<artifactId>stax.demo</artifactId>
+	<artifactId>xml.reader</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>StAX Reader Demo</name>
 	<description>Projeto de exemplo de módulo de leitura para validação XML usando a biblioteca StAX</description>

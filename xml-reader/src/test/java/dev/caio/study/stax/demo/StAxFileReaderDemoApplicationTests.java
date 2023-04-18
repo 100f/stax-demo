@@ -1,6 +1,6 @@
 package dev.caio.study.stax.demo;
 
-import dev.caio.study.stax.demo.domain.XMLReaderListener;
+import dev.caio.study.stax.demo.core.XMLReaderListener;
 import dev.caio.study.stax.demo.impl.PrintingXMLReaderListener;
 import dev.caio.study.stax.demo.impl.StaxXMLReader;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.Resource;
 
 import java.io.IOException;
-import java.util.Collections;
 
 @SpringBootTest
 class StAxFileReaderDemoApplicationTests {

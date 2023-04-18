@@ -36,7 +36,12 @@
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>dev.caio.study</groupId>
+			<artifactId>xml.reader</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>

@@ -1,4 +1,6 @@
-package dev.caio.study.stax.demo.domain.validation;
+package dev.caio.study.stax.demo.core.validation;
+
+import dev.caio.study.stax.demo.core.LineColumn;
 
 public abstract class ValidatorError {
     private String message;
