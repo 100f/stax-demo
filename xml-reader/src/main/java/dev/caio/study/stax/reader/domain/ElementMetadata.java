@@ -1,6 +1,6 @@
 package dev.caio.study.stax.reader.domain;
 
 public interface ElementMetadata {
-    LineColumn getPosition();
+    ElementPosition getPosition();
     Object getValue();
 }

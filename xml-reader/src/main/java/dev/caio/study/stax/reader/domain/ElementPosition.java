@@ -1,10 +1,10 @@
 package dev.caio.study.stax.reader.domain;
 
-public class LineColumn {
+public class ElementPosition {
     private Long line;
     private Long column;
 
-    public LineColumn(Long line, Long column) {
+    public ElementPosition(Long line, Long column) {
         this.line = line;
         this.column = column;
     }
@@ -15,5 +15,10 @@ public class LineColumn {
 
     public Long getColumn() {
         return column;
+    }
+
+    @Override
+    public String toString() {
+        return "[" + line + ", " + column + "]";
     }
 }

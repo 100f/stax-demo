@@ -1,5 +1,6 @@
 package dev.caio.study.stax.reader.impl;
 
+import dev.caio.study.stax.reader.domain.ElementPosition;
 import dev.caio.study.stax.reader.domain.XMLReaderListener;
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,17 +17,17 @@ public class PrintingXMLReaderListener implements XMLReaderListener {
     }
 
     @Override
-    public void onXmlElementReadStart(String startTagName) {
-        log.info("Abertura de bloco: " + startTagName);
+    public void onXmlElementReadStart(String startTagName, ElementPosition position) {
+        log.info(position + " - Abertura de bloco: " + startTagName);
     }
 
     @Override
-    public void onXmlElementReadFinish(String endTagName) {
-        log.info("Fechamento de bloco: " + endTagName);
+    public void onXmlElementReadFinish(String endTagName, ElementPosition position) {
+        log.info(position + " - Fechamento de bloco: " + endTagName);
     }
 
     @Override
-    public void characters(String content) {
-        log.info("Conteúdo lido: " + content);
+    public void characters(String content, ElementPosition position) {
+        log.info(position + " - Conteúdo lido: " + content);
     }
 }

@@ -1,5 +1,6 @@
 package dev.caio.study.stax.reader.impl;
 
+import dev.caio.study.stax.reader.domain.ElementPosition;
 import dev.caio.study.stax.reader.domain.XMLElement;
 import dev.caio.study.stax.reader.domain.XMLReaderListener;
 
@@ -24,17 +25,16 @@ public class XMLUnmarshallingReaderListener implements XMLReaderListener {
     }
 
     @Override
-    public void onXmlElementReadStart(String startTagName) {
+    public void onXmlElementReadStart(String startTagName, ElementPosition position) {
         clearCurrentReadTextContent();
     }
 
     @Override
-    public void onXmlElementReadFinish(String endTagName) {
-
+    public void onXmlElementReadFinish(String endTagName, ElementPosition position) {
     }
 
     @Override
-    public void characters(String content) {
+    public void characters(String content, ElementPosition position) {
         this.currentReadTextContent = content;
     }
 
