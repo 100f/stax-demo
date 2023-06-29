@@ -2,15 +2,18 @@ package dev.caio.study.stax.schema;
 
 import dev.caio.study.xml.commons.schema.annotations.XMLBlock;
 import dev.caio.study.xml.commons.schema.annotations.XMLField;
-import lombok.Data;
+import dev.caio.study.xml.commons.schema.definitions.XMLBlockClass;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Optional;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @XMLBlock(blockName = "root")
-public class Root {
+public class Root extends XMLBlockClass {
     @XMLField(name = "frozen")
     private Optional<String> frozen;
     @XMLField(name = "city")
