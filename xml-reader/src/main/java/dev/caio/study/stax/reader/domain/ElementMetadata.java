@@ -1,6 +1,7 @@
 package dev.caio.study.stax.reader.domain;
 
 public interface ElementMetadata {
-    ElementPosition getPosition();
-    Object getValue();
+    public String getElementName();
+    public ElementPosition getPosition();
+    public Object getValue();
 }

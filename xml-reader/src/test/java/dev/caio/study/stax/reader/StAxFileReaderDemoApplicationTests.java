@@ -1,8 +1,8 @@
 package dev.caio.study.stax.reader;
 
-import dev.caio.study.stax.reader.domain.XMLReaderListener;
-import dev.caio.study.stax.reader.impl.PrintingXMLReaderListener;
-import dev.caio.study.stax.reader.domain.impl.StaxXMLReader;
+import dev.caio.study.stax.reader.domain.listeners.XMLReaderListener;
+import dev.caio.study.stax.reader.listeners.impl.PrintingXMLReaderListener;
+import dev.caio.study.stax.reader.infra.impl.StaxXMLReader;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
