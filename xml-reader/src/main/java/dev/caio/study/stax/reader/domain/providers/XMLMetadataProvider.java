@@ -2,8 +2,10 @@ package dev.caio.study.stax.reader.domain.providers;
 
 import dev.caio.study.stax.reader.domain.XMLMetadata;
 
+import java.util.function.Supplier;
+
 /**
  * Provedor de metadados obtidos das classes que correspondem aos nós XML de um arquivo.
  */
-public interface XMLMetadataProvider extends MetadataProvider<XMLMetadata> {
+public interface XMLMetadataProvider extends Supplier<XMLMetadata> {
 }

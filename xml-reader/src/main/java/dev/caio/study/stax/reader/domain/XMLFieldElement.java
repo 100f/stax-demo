@@ -1,21 +1,18 @@
 package dev.caio.study.stax.reader.domain;
 
-import dev.caio.study.xml.commons.schema.formatter.exception.FieldFormattingException;
+import dev.caio.study.stax.reader.domain.factories.XMLFieldElementFactory;
+import dev.caio.study.xml.commons.formatter.exception.FieldFormattingException;
 import lombok.Getter;
 
 @Getter
 public class XMLFieldElement extends XMLElement {
-    /**
-     * Bloco XML lido pelo ouvite ao qual este campo pertence.
-     */
-    private final XMLBlockElement parentBlock;
-
+    private XMLFieldElementFactory elementFactory;
     private XMLFieldMetadata fieldMetadata;
-
     private Object parsedValue;
 
-    public XMLFieldElement(XMLBlockElement parentBlock) {
-        this.parentBlock = parentBlock;
+    public XMLFieldElement(XMLElement parentElement, ElementPosition position, String tagName) {
+        super(parentElement, position, tagName);
+        this.elementFactory = new XMLFieldElementFactory();
     }
 
     public void setFieldContent(String content) {
@@ -28,7 +25,7 @@ public class XMLFieldElement extends XMLElement {
         try {
             return fieldMetadata.parseContent(content);
         } catch (FieldFormattingException e) {
-            //DEFINIR MELHOR O QUE FAZER, PODE-SE
+            //DEFINIR MELHOR O QUE FAZER
             return content;
         }
     }
@@ -36,7 +33,7 @@ public class XMLFieldElement extends XMLElement {
     private void setParsedValueUsingParentBlockSetter() {
         try {
             if (parsedValue != null) {
-                fieldMetadata.setter().invoke(parentBlock, parsedValue);
+                fieldMetadata.setter().invoke(getParentElement(), parsedValue);
             }
         }
         catch (ReflectiveOperationException e) {
@@ -46,12 +43,7 @@ public class XMLFieldElement extends XMLElement {
     }
 
     @Override
-    public boolean isField() {
-        return true;
-    }
-
-    @Override
-    public boolean isBlock() {
-        return false;
+    public XMLElement createChildElement(String tagName, ElementPosition position) {
+        throw new IllegalStateException("O campo " + tagName + " não deveria possuir filhos.");
     }
 }

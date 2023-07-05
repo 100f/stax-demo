@@ -12,7 +12,6 @@ import java.util.concurrent.LinkedBlockingDeque;
 public class XMLUnmarshallingReaderListener implements XMLReaderListener {
     private final Deque<XMLElement> readElementsStack;
     private final XMLMetadataProvider xmlMetadataProvider;
-    private String currentReadTextContent;
 
     /**
      * Ouvinte de leitura que deve gerar instâncias de classes que representam nós XML. Para tal, utiliza um provedor de metadados dedicado como dependência.
@@ -22,6 +21,7 @@ public class XMLUnmarshallingReaderListener implements XMLReaderListener {
         this.xmlMetadataProvider = xmlMetadataProvider;
         this.readElementsStack = new LinkedBlockingDeque<>();
     }
+
     @Override
     public void onReadStart() {
     }
@@ -33,29 +33,29 @@ public class XMLUnmarshallingReaderListener implements XMLReaderListener {
 
     @Override
     public void onXmlElementReadStart(String startTagName, ElementPosition position) {
-        clearCurrentReadTextContent();
-        XMLElement latest = retrieveLatestReadElement();
-        //criar
-        this.readElementsStack.add(latest);
+        XMLElement newCurrentReadElement = createChildElementFromLatestReadElement(startTagName, position);
+        this.readElementsStack.add(newCurrentReadElement);
+    }
+
+    private XMLElement createChildElementFromLatestReadElement(String tagName, ElementPosition position) {
+        XMLElement latestReadElement = retrieveLatestReadElement();
+        return latestReadElement.createChildElement(tagName, position);
     }
 
     @Override
     public void onXmlElementReadFinish(String endTagName, ElementPosition position) {
         final XMLElement latest = retrieveLatestReadElement();
-        if (latest.isField()) {
-            XMLFieldElement latestFieldElement = (XMLFieldElement) latest;
-            latestFieldElement.setFieldContent(currentReadTextContent);
-        }
+        //O handler deverá estar aqui.
     }
 
     @Override
     public void characters(String content, ElementPosition position) {
-        this.currentReadTextContent = content;
+        //TODO: na teoria, se válido, sempre o último elemento da pilha para esse evento tem de ser do tipo campo, por isso o cast.
+        // Verificar possibilidade de lançar algum erro específico, caso não seja.
+        XMLFieldElement latestFieldRead = (XMLFieldElement) retrieveLatestReadElement();
+        latestFieldRead.setFieldContent(content);
     }
 
-    private void clearCurrentReadTextContent() {
-        currentReadTextContent = null;
-    }
     private XMLElement retrieveLatestReadElement() {
         return readElementsStack.peekFirst();
     }
