@@ -1,7 +1,7 @@
 package dev.caio.study.stax.schema;
 
-import dev.caio.study.xml.commons.schema.annotations.XMLBlock;
-import dev.caio.study.xml.commons.schema.definitions.XMLBlockClass;
+import dev.caio.study.xml.commons.annotations.XMLBlock;
+import dev.caio.study.xml.commons.definitions.XMLBlockClass;
 import lombok.Getter;
 import lombok.Setter;
 
