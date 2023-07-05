@@ -1,6 +1,6 @@
-package dev.caio.study.xml.commons.schema.annotations;
+package dev.caio.study.xml.commons.annotations;
 
-import dev.caio.study.xml.commons.schema.enums.FieldFormat;
+import dev.caio.study.xml.commons.enums.FieldFormat;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

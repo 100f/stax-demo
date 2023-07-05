@@ -1,4 +1,4 @@
-package dev.caio.study.xml.commons.schema.formatter.exception;
+package dev.caio.study.xml.commons.formatter.exception;
 
 public class FieldFormattingException extends Exception {
     public FieldFormattingException() {

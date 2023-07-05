@@ -1,8 +1,8 @@
-package dev.caio.study.xml.commons.schema.enums;
+package dev.caio.study.xml.commons.enums;
 
-import dev.caio.study.xml.commons.schema.formatter.FieldFormatter;
-import dev.caio.study.xml.commons.schema.formatter.NumericFieldFormatter;
-import dev.caio.study.xml.commons.schema.formatter.TextFieldFormatter;
+import dev.caio.study.xml.commons.formatter.FieldFormatter;
+import dev.caio.study.xml.commons.formatter.NumericFieldFormatter;
+import dev.caio.study.xml.commons.formatter.TextFieldFormatter;
 
 public enum FieldFormat {
     AN(TextFieldFormatter.class),
