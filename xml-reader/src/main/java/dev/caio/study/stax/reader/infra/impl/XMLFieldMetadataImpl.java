@@ -1,6 +1,6 @@
 package dev.caio.study.stax.reader.infra.impl;
 
-import dev.caio.study.stax.reader.domain.XMLFieldMetadata;
+import dev.caio.study.stax.reader.domain.metadata.XMLFieldMetadata;
 import dev.caio.study.xml.commons.definitions.XMLBlockClass;
 import dev.caio.study.xml.commons.enums.FieldFormat;
 import dev.caio.study.xml.commons.formatter.FieldFormatter;
@@ -29,7 +29,6 @@ public class XMLFieldMetadataImpl implements XMLFieldMetadata {
         return this.fieldName;
     }
 
-
     @Override
     public Method getter() {
         return null;
@@ -44,7 +43,6 @@ public class XMLFieldMetadataImpl implements XMLFieldMetadata {
     public Object parseContent(String content) throws FieldFormattingException {
         return this.fieldFormatter.format(content);
     }
-
 
     @Override
     public FieldFormat getFormat() {
