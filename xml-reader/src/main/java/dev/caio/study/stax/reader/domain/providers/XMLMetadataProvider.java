@@ -1,6 +1,6 @@
 package dev.caio.study.stax.reader.domain.providers;
 
-import dev.caio.study.stax.reader.domain.XMLMetadata;
+import dev.caio.study.stax.reader.domain.metadata.XMLMetadata;
 
 import java.util.function.Supplier;
 

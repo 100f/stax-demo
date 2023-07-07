@@ -1,6 +1,7 @@
 package dev.caio.study.stax.reader.domain;
 
 import dev.caio.study.stax.reader.domain.factories.XMLFieldElementFactory;
+import dev.caio.study.stax.reader.domain.metadata.XMLFieldMetadata;
 import dev.caio.study.xml.commons.formatter.exception.FieldFormattingException;
 import lombok.Getter;
 
