@@ -7,6 +7,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@XMLBlock(blockName = "higher")
+@XMLBlock(blockName = "higher", id = "higher_id")
 public class Higher extends XMLBlockClass {
 }

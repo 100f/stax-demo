@@ -16,4 +16,10 @@ public @interface XMLBlock {
      * @return {@link String} nome do bloco XML correspondente.
      */
     public String blockName();
+
+    /**
+     * Atributo obrigatório que define o identificador do bloco. Pode ser qualquer valor, basta que seja único por bloco distinto.
+     * @return {@link String} valor identificador do bloco XML correspondente.
+     */
+    public String id();
 }

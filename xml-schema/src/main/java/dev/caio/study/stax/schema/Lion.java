@@ -7,6 +7,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@XMLBlock(blockName = "name")
+@XMLBlock(blockName = "name", id = "lion_id")
 public class Lion extends XMLBlockClass {
 }

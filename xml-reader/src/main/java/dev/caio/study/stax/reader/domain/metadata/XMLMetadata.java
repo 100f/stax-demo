@@ -9,5 +9,5 @@ import java.util.Collection;
  */
 public interface XMLMetadata {
     public Collection<? extends XMLBlockMetadata> getBlocksMetadata();
-    public XMLBlockMetadata getBlockMetadata();
+    public XMLBlockMetadata getBlockMetadata(String id);
 }

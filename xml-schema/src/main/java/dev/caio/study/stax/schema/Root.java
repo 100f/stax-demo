@@ -12,7 +12,7 @@ import java.util.Optional;
 @Getter
 @Setter
 @NoArgsConstructor
-@XMLBlock(blockName = "root")
+@XMLBlock(blockName = "root", id = "root_id")
 public class Root extends XMLBlockClass {
     @XMLField(name = "frozen")
     private Optional<String> frozen;
